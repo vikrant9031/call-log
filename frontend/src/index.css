@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  background-image: linear-gradient(-225deg, #5D9FFF 0%, #B8DCFF 48%, #6BBBFF 100%);
+  height:100%;
+      /* background-image:url('log.jpeg');
+       background-repeat:no-repeat;*/
+       background-size:100vw 100vh; 
+
+      font-family: 'Amatic SC', cursive;
+}
+#grass{
+background-image:url('loda.jpeg');
+padding:50px;
+opacity: 50%;
+border-radius :50px 50px 50px 50px;
+background: rgba(0,0,0,0.5);
+background-position: center;
+font-family: sans-serif;
+color:white;
+
+}
+.registerpos{
+	margin-left:500px;
+	margin-top:200px;
+}
+#seed{
+width:500px;
+height: 400px;
+padding:50px;
+background: rgba(0,0,0,0.5);
+border-radius :50px 50px 50px 50px;
+background-position: center;
+color:white;
+font-family: sans-serif;
+
+}
+#contact{
+	background-image: url('pexels-photo-326576.jpeg');
+
+}
+#logo{
+position: absolute;
+left:1400px;
+top:-180px;
+
+}
+#text2{
+	font-size: 25px;
+	word-spacing: 4;
+	color:black;
+}
+#text1{
+
+	font-size: 25px;
+	word-spacing: 4;
+	color:black;
+
+}
+.child{
+position: absolute;
+left:1200px;
+top:-100px;
+}
+#profile-container{
+	position: absolute;;
+	top:200px;
+	left:100px;
+	width:200px;
+	height: 180px;
+}
+#file{
+	position: absolute;
+	top:460px;
+	left:130px;
+	height: 60px;
+	width: 200px;
+}
+#name{
+
+	position: absolute;
+	top:420px;
+	left:120px;
+	height: 60px;
+	width: 200px;
+}
+#myContacts{
+	position: absolute;
+	top:20px;
+	left:500px;
+	padding-left: 200px;
+
+}
+#signinbox{
+	position: absolute;
+    margin-left:500px;
+    margin-top:200px;
+
+}
+
+#email-address{
+	margin-left: 40px;
+	width:250px;
+}
+#password{
+	margin-left: 40px;
+	width:250px;
+}
+#labelemail{
+	margin-left: 40px;
+	color: white;
+}
+#labelpassword{
+	margin-left: 40px;
+	color: white;
+}
+#signinbtn{
+	margin-left: 40px;
+	color: green;
+	width:100px;
+	padding-left: 25px;
+	padding-top: 8px;
+	height: 40px;
+	font-size: 18px;
+}
+#signinbtn:hover{
+	cursor:pointer;
+	color: blue;
+}
+#checkbox{
+    margin-left: 40px;
+    	color: white;
+}
+#signup{
+	margin-left: 40px;
+		color: white;
+}
+#forgotpass{
+	margin-left: 40px;
+		color: white;
+}
+#contitle{
+	width: 80%;
+	font-size: 30px;
+	margin-bottom: 30px;
+	margin-top: 20px;
+}
+#conarticle{
+width: 500px;
+margin-left: 180px;
+}
+#comment{
+	width:100%;
+	height: 70px; 
+}
+
+
+#main{
+	
+	color: black;
+	opacity: 0.8;
+}
+#signintop{
+	font-family: sans-serif;
+	position: absolute;
+	margin-left: 150px;
+	font-size: 28px;
+}
+#regemail-address{
+width:300px;
+margin-left:0px;
+}
+#regpassword{
+	width:300px;
+	margin-left:0px;
+}
+td{
+	font-size: 25px;
+	border:1px dotted black;
+	color: green;
+}
+table{
+	border:6px solid yellow;
+	border-radius: 20px;
+}
+
+#textarea{
+	padding-left:20px;
+	width:380px;
+	height:28px;
+	margin-left:-20px;
+	margin-top:25px;
+	color:#E7040F; 
+}
+#regsignup{
+	width:100px;
+	margin-left:100px;
+}
+#Registerlabel{
+	color:white;
+}
+@media screen and (max-width: 768px) {
+    #logo {
+        left:10px;
+    }
+    #sidelogo1{
+    	left:10px;
+    	width:40px;
+    	height:20px;
+    	font-size: 15px;
+    	padding-left: 0px;
+    }
+    #sidelogo{
+    	left:10px;
+    	width: 50px;
+
+    }
+     #sidelogo2{
+    	left:10px;
+    	width:40px;
+    	height:25px;
+    	font-size: 15px;
+    	padding-left: 0px;
+    }
+    #text1{
+        font-size:9px;
+        width:20px;
+        
+    }
+    #text2{
+        font-size: 9px;
+        width: 20px;
+        left:-49px;
+    }
+    #signinbox{
+    	margin-left:0px;
+    	margin-top: 0px;
+    	height:100px;
+    }
+    #seed{
+       padding:20px;
+       height:320px;
+       width:250px;
+       border-radius :15px 15px 15px 15px;
+       position: absolute;
+       left:80px;
+       top:100px;
+       
+    }
+
+#email-address{
+	margin-left: 5px;
+	width:140px;
+}
+#password{
+	margin-left: 5px;
+	width:140px;
+}
+#labelemail{
+	margin-left: 5px;
+	color: white;
+}
+#labelpassword{
+	margin-left: 5px;
+	color: white;
+}
+#signinbtn{
+	margin-left: 5px;
+	color: green;
+	width:50px;
+	padding-left: 8px;
+	padding-top: 8px;
+	height: 30px;
+	font-size: 10px;
+}
+#checkbox{
+    margin-left: 5px;
+    	color: white;
+}
+#signup{
+	margin-left: 5px;
+		color: white;
+}
+#forgotpass{
+	margin-left: 5px;
+		color: white;
+}
+#signintop{
+	position: absolute;
+	margin-left: 65px;
+	font-size: 20px;
+}
+.registerpos{
+	margin-left:0px;
+	margin-top:0px;
+}
+#regemail-address{
+width:200px;
+margin-left:0px;
+}
+#regpassword{
+	width:200px;
+	margin-left:0px;
+}
+#textarea{
+	padding-left:-30px;
+	width:250px;
+	height:15px;
+	margin-left:-20px;
+	margin-top:25px;
+	color:#E7040F; 
+	font-size: 10px;
+}
+#regsignup{
+	width:80px;
+	font-size: 10px;
+	margin-left:60px;
+}
+#Registerlabel{
+	color:white;
+	margin-left: -10px;
+}
+#conarticle{
+	position: absolute;
+	top: 550px;
+	left: -150px;
+	width: 80%;
+}
+#comment{
+	width:75%;
+	height: 35px;
+
+}
+#contitle{
+	margin-top: 0px;
+	margin-bottom: 30px;
+	width: 75%;
+	font-size: 1.2rem;
+	color: red;
+	margin-left: 10px;
+
+}
+#conlabel{
+	font-size: 1.2rem;
+}
+#profile-container{
+	width: 30%;
+
+}
+#consign{
+	font-size: 1.2rem;
+	width: 40%;
+}
+#concon{
+	font-size: 1.2rem;
+	padding: 0px;
+	width: 40%;
+}
+#conbutton{
+	position: absolute;
+	left: -70px;
+}
+table{
+	position: absolute;
+	top: 100px;
+	left: -20px;
+	
+	
+	border-spacing: 10px 10px;
+	border:2px solid yellow;
+	filter: drop-shadow(3px);
+	padding-top: 40px;
+
+
+
+
+}
+
+
+td{
+	border:2px dotted white;
+	font-size: 10px;
+
+
+
+}
+
+
+#infotitle{
+	font-size: 1.2rem;
+}
+}

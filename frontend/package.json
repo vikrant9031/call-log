@@ -1,0 +1,24 @@
+{
+  "name": "application",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "gh-pages": "^2.0.0",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "react-native-push-notification-popup": "^1.1.1",
+    "react-player": "^1.6.4",
+    "react-reveal": "^1.2.2",
+    "react-scripts": "1.1.4",
+    "react-text-loop": "^1.1.0",
+    "react-video-tag": "0.0.10",
+    "reactjs-popup": "^1.2.0",
+    "tachyons": "^4.11.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
