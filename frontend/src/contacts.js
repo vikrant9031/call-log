@@ -39,7 +39,7 @@ class Contacts extends React.Component{
  }
 
 onSubmit=()=>{
-    fetch('http://localhost:3001/contact',{
+    fetch('https://damp-lake-30158.herokuapp.com/contact',{
         method:'post',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({

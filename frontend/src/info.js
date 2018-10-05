@@ -9,7 +9,7 @@ class Info extends React.Component{
     }
   }
   componentDidMount(){
-   fetch('http://localhost:3001/info',{
+   fetch('https://damp-lake-30158.herokuapp.com/info',{
         method:'post',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({

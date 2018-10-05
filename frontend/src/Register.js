@@ -51,7 +51,7 @@ import Check from './popup';
         const err=this.validate();
         console.log(this.state.emailError);
         if(!err){
-        fetch('http://localhost:3001/register',{
+        fetch('https://damp-lake-30158.herokuapp.com/register',{
         method:'post',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
