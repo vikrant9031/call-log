@@ -1,19 +1,29 @@
 import React from 'react';
 import TextLoop from 'react-text-loop';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
+import './info.css';
+
 
 class Info extends React.Component{
   constructor(props){
     super(props);
     this.state={
       users:[]
+     // sendId:sessionStorage.getItem('id')
     }
   }
   componentDidMount(){
-   fetch('https://damp-lake-30158.herokuapp.com/info',{
+    const data  = new FormData();
+    data.append('id',sessionStorage.getItem('id'));
+   fetch('https://stormy-waters-56939.herokuapp.com/info',{
         method:'post',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({
-   })
+       
+        body:data
     }).then(function(response){
        return response.json();
     }).then(data=>{
@@ -31,41 +41,39 @@ render(){
 
   
     return (
-   <div> 
+    <div id="section">
+   
  <article  onClick= {()=>info('contact')} className="f2 bg-light-pink dim pointer hover-black fl w-1 mv1 ph5 red shadow-3" id="infotitle">Back to form</article>
-<div className="pa1">
-  <div className="overflow-x:auto;" id="scroll">
-    <table id="infotable" className="f6 w-100 mw8 center" cellspacing="40">
-    
-      <div>
-      {
-        this.state.users.map((count,i)=>{
-          console.log(count);
-
-return(
- <tbody>
-        <tr>
-          <td className="space">{count.id}</td>
-          <td className="space">{count.name}</td>
-          <td className="space">{count.work}</td>
-          <td className="space">{count.email}</td>
-          <td className="space">{count.mobile}</td>
-          <td className="space">{count.company}</td>
-        </tr>
-        
-      </tbody>
-
-
-  )
-
-        })
-     
-    }
+<Paper id="paper">
+      <Table>
+        <TableHead>
+          <TableRow id="row">
+             <TableCell style={{color:"white"}}>Name</TableCell>
+             <TableCell align="right"  style={{color:"white"}}>Work</TableCell>
+             
+             <TableCell align="right"  style={{color:"white"}}>Email</TableCell>
+             <TableCell align="right"  style={{color:"white"}}>Mobile</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {this.state.users.map(row => {
+            return (
+              <TableRow  key={row.id}>
+                <TableCell component="th" scope="row">
+                  {row.name}
+                </TableCell>
+                
+                <TableCell align="right">{row.work}</TableCell>
+                <TableCell align="right">{row.email}</TableCell>
+                <TableCell align="right">{row.mobile}</TableCell>
+              </TableRow>
+            );
+          })
+        }
+        </TableBody>
+   </Table>
+    </Paper>
     </div>
-    </table>
-  </div>
-</div>
-</div>
     );
 
   }

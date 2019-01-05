@@ -51,13 +51,12 @@ import Check from './popup';
         const err=this.validate();
         console.log(this.state.emailError);
         if(!err){
-        fetch('https://damp-lake-30158.herokuapp.com/register',{
+        fetch('https://stormy-waters-56939.herokuapp.com/register',{
         method:'post',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
             email:this.state.email,
              password:this.state.password
-
    })
     }).then(function(response){
         return  response.json();
@@ -81,6 +80,8 @@ import Check from './popup';
     const {register}=this.props;
 
     return (
+      <div>
+      <article  id="regHome" onClick={()=>register('home')} className="f2 fl w-3 bg-light-pink  dim pointer hover-dark-blue mv1 ph5 right shadow-3">Home</article>
     <Zoom right cascade>
     <div  className="registerpos">
     <article className="o-90    pa4 black-80   bw5 br4 pa4  mw6 " >
@@ -108,6 +109,7 @@ import Check from './popup';
 </article>
 </div>
 </Zoom>
+</div>
 
     );
   }

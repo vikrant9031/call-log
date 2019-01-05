@@ -3,17 +3,22 @@ import TextLoop from 'react-text-loop';
 import Flip from 'react-reveal/Flip';
 import Shake from 'react-reveal/Shake';
 import Popup from "reactjs-popup";
+import './pop.css';
+
 
 const Pop=({pop})=>{
 	return (
-		<div  > 
+		<div > 
 		  <div className="hide-child absolute hover-red b ttu pointer f2 w-10">
 		  <Flip left>
 		  <Shake>
+      <i className="fa fa-arrow-right" aria-hidden="true"></i>
+   
             <div className="pa4 tc" >
   <img id="logo"
       src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS330mqBzBGv0WAH-Hwbur40wrh5TDyqfgGifdg1WzvN2-0umNyRg"
       className="br-100 h3 w3 dib" alt="avatar"/>
+      
 </div>
 </Shake>
 </Flip>

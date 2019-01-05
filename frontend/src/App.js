@@ -8,32 +8,41 @@ import Contacts from './contacts';
 import Info from './info';
 import Forgot from './forgot';
 import Cardlist from './cardlist';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 class App extends Component {
 
 constructor(props){
   super(props);
   this.state={
+
      route:'home',
      name:'',
      users:[]
   }
 }
+    componentDidMount=()=>{
+      if (sessionStorage.getItem('id')) {
+        this.setState({route:'contact'});
+      }else{
+        this.setState({route:'home'});
+      }
+    }
 
 onRouteChange=(random)=>{
   this.setState({route:random});
 }
+
 onNameChange=(random)=>{
   this.setState({name:random});
 }
 
   render() {
-    
     return (
-
        
       <div>
       {
+
        this.state.route ==='register' 
          ?
         <Register register={this.onRouteChange} />

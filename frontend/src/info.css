@@ -1,0 +1,16 @@
+ #paper Table{
+ 	box-shadow: inset 4px 4px 70px purple;
+	filter: drop-shadow(2px 4px 6px black);
+	background-color: white;
+ }
+ #row{
+ 	background-color: black;
+ 
+
+ }
+
+ #section{
+ 	
+background-color: white;
+overflow: scroll;
+ }

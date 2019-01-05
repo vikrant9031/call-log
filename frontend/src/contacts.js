@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactPlayer from 'react-player';
 import 'tachyons';
+import './contact.css';
 
 class Contacts extends React.Component{
   constructor(props){
@@ -8,10 +9,11 @@ class Contacts extends React.Component{
     this.state={
       src:'https://pbs.twimg.com/profile_images/681337437226938368/31sRHb4V_400x400.jpg',
       name:'',
-      company:'',
+      
       work:'',
       mobile:'',
-      email:''
+      email:'',
+      sid:sessionStorage.getItem('id')
       
     }
   this.onFile = this.onFile.bind(this);
@@ -37,23 +39,30 @@ class Contacts extends React.Component{
   onEmailChange=(event)=>{
   this.setState({email:event.target.value})
  }
+ onSignout =(event)=>{
+  this.props.contact('home');
+  sessionStorage.clear();
+
+ }
 
 onSubmit=()=>{
-    fetch('https://damp-lake-30158.herokuapp.com/contact',{
+  const data = new FormData();
+  data.append('name',this.state.name);
+  
+    data.append('work',this.state.work);
+     data.append('mobile',this.state.mobile);
+     data.append('email',this.state.email);
+     data.append('id',sessionStorage.getItem('id'));
+    fetch('https://stormy-waters-56939.herokuapp.com/contact',{
         method:'post',
-        headers:{'Content-Type':'application/json'},
-        body:JSON.stringify({
-            name:this.state.name,
-             company:this.state.company,
-              work:this.state.work,
-              mobile:this.state.mobile,
-               email:this.state.email
-   })
+       
+        body:data
     }).then(function(response){
          return response.json();
     }).then(data=>{
         if(data==='successfully'){
           console.log("successfully inserted");
+          console.log(sessionStorage.getItem('id'));
           this.props.contact('info');
         }else{
           console.log("error submission");
@@ -65,13 +74,13 @@ onFile=()=>{
   const data=new FormData;
   var a= document.getElementById('fileid');
   data.append('file',a.files[0]);
-    fetch('http://localhost:3001/upload',{
+    fetch('https://stormy-waters-56939.herokuapp.com/upload',{
         method:'post',
         body:data
     }).then(function(response){
       return response.json()
     }).then(data=>{
-      this.setState({src:`http://localhost:3001/${data.file}`})
+      this.setState({src:`https://stormy-waters-56939.herokuapp.com/${data.file}`})
     })
 
 }
@@ -79,8 +88,8 @@ onFile=()=>{
     const {contact,name}=this.props;
       return (
 
-<div id="maincon">
-<article  onClick= {()=>contact('home')} id="consign" className="f2 fl w-3 bg-light-pink  dim pointer hover-dark-blue mv1 ph5 right shadow-3">Signout</article>
+<div id="maincon" style={{backgroundColor:'black'}}>
+<article  onClick= {this.onSignout} id="consign" className="f2 fl w-3 bg-light-pink  dim pointer hover-dark-blue mv1 ph5 right shadow-3">Signout</article>
 <article onClick={()=>contact('info')} id="concon" className="f2 fl w-3 bg-dark-blue  dim pointer  mv1 ph5 right shadow-3">My Contacts</article>
 <div id="profile-container">
 <img src={this.state.src} className="o-95"/>
@@ -95,10 +104,7 @@ onFile=()=>{
     <label for="comment" id="conlabel" className="f3 b db mb2">Name <span className="normal black-60">(Required)</span></label>
     <textarea onChange={this.onNameChange} id="comment" name="comment" className="db grow border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2" aria-describedby="comment-desc"></textarea>
    </div>
-    <div>
-    <label for="comment" id="conlabel" className="f3 b db mb2">Company<span className="normal black-60">(optional)</span></label>
-    <textarea eventonChange={this.onCompanyChange}  id="comment" name="comment" className="db grow border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2" aria-describedby="comment-desc"></textarea>
-   </div>
+    
     <div>
     <label for="comment" id="conlabel" className="f3 b db mb2">Work<span className="normal black-60">(optional)</span></label>
     <textarea onChange={this.onWorkChange} id="comment" name="comment" className="db grow border-box hover-black w-100 measure ba b--black-20 pa2 br2 mb2" aria-describedby="comment-desc"></textarea>

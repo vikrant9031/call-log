@@ -2,6 +2,7 @@ import React from 'react';
 import Bounce from 'react-reveal/Bounce';
 import Jump from 'react-reveal/Jump';
 import 'tachyons' ;
+import '../node_modules/font-awesome/css/font-awesome.min.css';
 
 class Signin extends React.Component{
    
@@ -15,6 +16,7 @@ class Signin extends React.Component{
    		opactity:'none'
    	}
    }
+
 
    onInputName=(event)=>{
    	 this.setState({name:event.target.value})
@@ -52,44 +54,47 @@ class Signin extends React.Component{
   return isError;
  }
 
-onFill=()=>{
+onFillentry=()=>{
+
         const err=this.validate();
         console.log(this.state.emailError);
         if(!err){
-	    fetch('https://damp-lake-30158.herokuapp.com/signin',{
+	    fetch('https://stormy-waters-56939.herokuapp.com/signin',{
         method:'post',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
             email:this.state.name,
             password:this.state.password
-
    })
     })
         .then(function(response){
         return	response.json();
         }).
         then(data=>{
-        if(data==='success'){
+        if(data){
         	this.props.sign('contact');
-        }else if(data ==='error'){
+        }/*else if(data ==='error'){
         		this.onInputMessage;
-        }
+        }*/
         console.log(data);
+        sessionStorage.setItem('id',JSON.stringify(data[0].id));
+        console.log(sessionStorage.getItem('id'));
 })
-          console.log(this.state);
-    
-	this.props.onName(this.state.name);
+          console.log(this.state.name);
+	        this.props.onName(this.state.name);
 }
-      }
+      
+}
 
 	render(){
 		 const {sign,onName}=this.props;
 		return (
-			<div id="signinbody">
-		<Jump>
+
+      
+ 
 		<Bounce left cascade>
-	<div id="signinbox" >
-<main id="main">
+	<div id="signinbox">
+<article className="o-90    pa4 black-80   bw5 br4 pa4  mw6 " >
   <form className="measure center" id="seed">
     <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
       <legend id="signintop">Sign In</legend>
@@ -104,10 +109,10 @@ onFill=()=>{
       <label id="checkbox"><input type="checkbox" /> Remember me</label>
     </fieldset>
     <div>
-      <textarea id="signinbtn" onClick={this.onFill}  value="Sign in" />
+      <div id="signinbtn" onClick={this.onFillentry}>signIn</div>
     </div>
     <div class="lh-copy mt3">
-      <p  id="signup"  onClick={()=>sign('contact')} className="f6 link grow  white db pointer">Sign up</p>
+      <p  id="signup"  onClick={()=>sign('register')} className="f6 link grow  white db pointer">Sign up</p>
       <a  id="forgotpass" href="#0" onClick={()=>sign('forgot')} className="f6 link grow underline white db">Forgot your password?</a>
     </div>
     <div style={{display: this.state.opacity}}>{this.state.message}
@@ -117,11 +122,11 @@ onFill=()=>{
   </div>
   </form>
   
-</main>
+</article>
 </div>
 </Bounce>
-</Jump>
-</div>
+
+
 		);
 
 	}
