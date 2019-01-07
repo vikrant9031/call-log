@@ -53,7 +53,7 @@ onSubmit=()=>{
      data.append('mobile',this.state.mobile);
      data.append('email',this.state.email);
      data.append('id',sessionStorage.getItem('id'));
-    fetch('https://stormy-waters-56939.herokuapp.com/contact',{
+    fetch('https://limitless-oasis-36046.herokuapp.com/contact',{
         method:'post',
        
         body:data
@@ -74,13 +74,13 @@ onFile=()=>{
   const data=new FormData;
   var a= document.getElementById('fileid');
   data.append('file',a.files[0]);
-    fetch('https://stormy-waters-56939.herokuapp.com/upload',{
+    fetch('https://limitless-oasis-36046.herokuapp.com/upload',{
         method:'post',
         body:data
     }).then(function(response){
       return response.json()
     }).then(data=>{
-      this.setState({src:`https://stormy-waters-56939.herokuapp.com/${data.file}`})
+      this.setState({src:`https://limitless-oasis-36046.herokuapp.com/${data.file}`})
     })
 
 }
