@@ -1,0 +1,43 @@
+@media screen and (max-width: 768px) {
+	#forgothome{
+		position: fixed;
+	}
+
+#passwordField{
+	padding: 5px;
+	width:75%;
+	height: 40px;
+}
+#forgotsecurityfield{
+
+}
+#forgothome{
+	position: absolute;
+	top: 70%;
+	left:25%;
+}
+
+}
+/*
+#forgotsecurity{
+	position: absolute;
+	top: 20%;
+	left:20%;
+}
+#forgotsecurityfield{
+	position: absolute;
+	top: 25%;
+	left:20%;
+
+}
+#forgotpassword{
+	position: absolute;
+	top: 28%;
+	left:20%;
+}
+#forgotpasswordfield{
+	position: absolute;
+	top: 30%;
+	left:20%;
+
+}*/

@@ -88,7 +88,7 @@ onFile=()=>{
     const {contact,name}=this.props;
       return (
 
-<div id="maincon" style={{backgroundColor:'black'}}>
+<div id="section2">
 <article  onClick= {this.onSignout} id="consign" className="f2 fl w-3 bg-light-pink  dim pointer hover-dark-blue mv1 ph5 right shadow-3">Signout</article>
 <article onClick={()=>contact('info')} id="concon" className="f2 fl w-3 bg-dark-blue  dim pointer  mv1 ph5 right shadow-3">My Contacts</article>
 <div id="profile-container">

@@ -72,13 +72,12 @@ onFillentry=()=>{
         }).
         then(data=>{
         if(data){
+          sessionStorage.setItem('id',JSON.stringify(data[0].id));
         	this.props.sign('contact');
         }/*else if(data ==='error'){
         		this.onInputMessage;
         }*/
-        console.log(data);
-        sessionStorage.setItem('id',JSON.stringify(data[0].id));
-        console.log(sessionStorage.getItem('id'));
+      
 })
           console.log(this.state.name);
 	        this.props.onName(this.state.name);

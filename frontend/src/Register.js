@@ -10,7 +10,8 @@ import Check from './popup';
     this.state={
       email:'',
       emailError:'                   INPUT CREDENTIALS           ',
-      password:''
+      password:'',
+      security:''
     }
    }
 
@@ -22,6 +23,10 @@ import Check from './popup';
   OnPasswordChange=(event)=>{
     this.setState({password:event.target.value})
     console.log(this.state.password);
+  }
+  OnSecurity=(event)=>{
+    this.setState({security:event.target.value})
+    console.log(this.state.security);
   }
 
  validate=()=>{
@@ -56,15 +61,17 @@ import Check from './popup';
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
             email:this.state.email,
-             password:this.state.password
+             password:this.state.password,
+             security:this.state.security
    })
     }).then(function(response){
         return  response.json();
 
         })
         .then(data=>{
-      if(data==='successfully'){
+      if(data){
         console.log("successfully inserted");
+        console.log(data);
         this.props.register('home');
       }
       else{
@@ -99,6 +106,10 @@ import Check from './popup';
         <input  onChange={this.OnPasswordChange}  
         className="field b pa2 input-reset ba bg-transparent ttc  bg-transparent hover-bg-black hover-white w-100" 
         type="password" name="password"  id="regpassword" ></input>
+          <label className="db fw4 lh-copy f6 pointer"  style={{color:'white'}}>Security Code</label>
+        <input  onChange={this.OnSecurity}  
+        className="field b pa2 input-reset ba bg-transparent ttc  bg-transparent hover-bg-black hover-white w-100" 
+        type="text" name="text"  id="Security" ></input>
       </div>
     </fieldset>
     <div className="mt3"><div onClick={this.onRegister} id="regsignup" className="b  ph3 pv2 hover-bg-green bg-white input-reset ba b--black bg-transparent grow pointer f6"  value="Sign Up">Sign up</div></div>

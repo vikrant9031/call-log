@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
 body, html {
-  height: auto;
+  height: 100%;
   margin: 0;
+ 
 }
 
 body {
@@ -11,6 +12,9 @@ body {
    font-family: 'Amatic SC', cursive;
    background-image: linear-gradient(to right, red , yellow);
    background-size: cover;
+   
+
+ 
 }
 #regHome{
 	position: absolute;
@@ -216,14 +220,30 @@ i{
 	margin-left: 1300px;
 	margin-top: -170px;
 }
+#passwordField{
+	background-color: white;
+	color: red;
+	font-style: bold;
+	font-size: 30px;
+}
+#Security{
+	width:300px;
+margin-left:0px;
+}
+
 @media screen and (max-width: 768px) {
     #logo {
         left:10px;
     }
     #regHome{
 	position: absolute;
-	top: 450px;
+	top: 500px;
 	left: 100px;
+	width: 180px;
+}
+#Security{
+width:200px;
+margin-left:0px;
 }
     #signHome{
 	position: absolute;
@@ -265,7 +285,7 @@ i{
        height:320px;
        width:250px;
        border-radius :15px 15px 15px 15px;
-   transform: translate(0%,50%);
+   transform: translate(0%,30%);
        
     }
 
