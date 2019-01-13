@@ -20,7 +20,7 @@ class Info extends React.Component{
   componentDidMount(){
     const data  = new FormData();
     data.append('id',sessionStorage.getItem('id'));
-   fetch('https://limitless-oasis-36046.herokuapp.com/info',{
+   fetch('https://obscure-ocean-94951.herokuapp.com/info',{
         method:'post',
        
         body:data

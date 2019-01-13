@@ -56,7 +56,7 @@ import Check from './popup';
         const err=this.validate();
         console.log(this.state.emailError);
         if(!err){
-        fetch('https://limitless-oasis-36046.herokuapp.com/register',{
+        fetch('https://obscure-ocean-94951.herokuapp.com/register',{
         method:'post',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
